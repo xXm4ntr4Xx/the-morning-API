@@ -36,25 +36,25 @@ async function singleItemFetch(){
 
 
 useEffect(()=>{
-  dataFetch();
-  singleItemFetch()
+  dataFetch(); 
 },[])
 
+
+useEffect(()=>{
+  singleItemFetch(); 
+},[])
 
 
   return (
     <div className="App">
-      {userInfo.map(user=>{
+      {userInfo.map(user=> {
         return(
-            <>
-              <p>{user.by}</p>
-              <p>{user.title}</p>
-                <ul>
-              {user.kids.map(kid=> <li>{kid}</li>)}
-                </ul>
-            </>
+          <>
+            <p>{user.by}</p>
+          </>
         )
       })}
+      {console.log(userInfo)}
     </div>
   );
 }
