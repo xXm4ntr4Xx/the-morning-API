@@ -26,35 +26,32 @@ function App() {
 
 async function singleItemFetch(){ 
   let tempArray=[]
-  for(let i=0;i<5;i++){
+  for(let i=0;i<15;i++){
     const response =  await fetch(`https://hacker-news.firebaseio.com/v0/item/${info[i]}.json`)
      const data = await  response.json()
      tempArray[i] = data
   }
   setUserInfo(tempArray)  
+  console.log(tempArray,'temp array')
 }
 
 
 useEffect(()=>{
-  dataFetch(); 
+  dataFetch();
+  singleItemFetch()
 },[])
 
-
-useEffect(()=>{
-  singleItemFetch(); 
-},[])
 
 
   return (
     <div className="App">
-      {userInfo.map(user=> {
+      {/* {userInfo.map(user=> { 
         return(
           <>
             <p>{user.by}</p>
           </>
         )
-      })}
-      {console.log(userInfo)}
+      })} */}
     </div>
   );
 }
