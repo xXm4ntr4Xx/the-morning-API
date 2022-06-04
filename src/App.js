@@ -42,7 +42,6 @@ useEffect(()=>{
 },[])
 
 
-
   return (
     <div className="App">
       {/* {userInfo.map(user=> { 
