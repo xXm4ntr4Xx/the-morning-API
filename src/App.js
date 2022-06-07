@@ -26,7 +26,6 @@ function App() {
       })  
   }
 
-
 useEffect(()=>{
   dataFetch();
 },[])
@@ -35,7 +34,7 @@ console.log(info,'data')
   return (
     <div className="App">
       {info.map((user,index)=>{
-        if(user.type==='comment'){
+        if(user.type==='comment'){ // filter all the message that are saved as comment
           return (
             <div key={index}>
               <p>Username: {user.by}</p>
@@ -46,11 +45,9 @@ console.log(info,'data')
               <p>Type:  {user.type}</p>
               <p>Comment:  {user.text ? user.text : '---'}</p>
               <hr></hr>
-            </div>
-            
+            </div> 
           )
-        }
-        
+        }       
       })}
     </div>
   );
