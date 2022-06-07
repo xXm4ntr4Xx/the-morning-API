@@ -7,21 +7,17 @@ function App() {
 
   const [info,setInfo] = useState([]);
 
-
-  
-  
-
   const storiesURL = `https://hacker-news.firebaseio.com/v0/topstories.json`;
   //  `https://hacker-news.firebaseio.com/v0/item/${id}.json`
 
 
   async function dataFetch(){ 
     const newArray = []
-    //id fetch
+    //retreive all the id 
     axios.get(storiesURL)
       .then((response)=>{
         for(let i=0;i<10;i++){
-          //users fetch
+          //retreive all the users by using the id fetched previously
           axios.get(`https://hacker-news.firebaseio.com/v0/item/${response.data[i]+1}.json`)
             .then((response)=>{
               newArray.push(response.data)
@@ -31,8 +27,7 @@ function App() {
         }
       }).catch((err)=>{
         console.log(err)
-      })
-     
+      })  
   }
 
 
