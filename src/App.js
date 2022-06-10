@@ -52,5 +52,4 @@ console.log(info,'data')
     </div>
   );
 }
-
 export default App;
